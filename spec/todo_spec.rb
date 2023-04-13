@@ -8,4 +8,12 @@ describe Todo do
       expect(todo_list.add_task("Eat")).to eq "Eat successfully added!"
     end
   end
+
+  context "show all tasks" do
+    it "shows each task in a bullet point line" do
+      todo_list = Todo.new
+      todo_list.add_task("Do laundry")
+      expect { todo_list.show_tasks }.to output("* Do laundry\n").to_stdout
+    end
+  end
 end

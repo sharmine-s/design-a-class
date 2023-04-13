@@ -5,6 +5,10 @@ class Todo
 
   def add_task(task)
     @list << task
-    "#{task} successfully added!"
+    return "#{task} successfully added!"
+  end
+
+  def show_tasks
+    @list.each { |x| puts "* #{x}" }
   end
 end
